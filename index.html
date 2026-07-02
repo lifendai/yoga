@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>瑜伽体式收录 | 山式站立 · 站立前屈</title>
+  <style>
+    :root {
+      --paper: #f6f8f5;
+      --surface: #ffffff;
+      --ink: #17201d;
+      --muted: #5e6b66;
+      --line: #dce3dd;
+      --teal: #1f7a76;
+      --teal-deep: #145753;
+      --coral: #c96448;
+      --sage: #748b5d;
+      --gold: #a47a35;
+      --sky: #e8eff7;
+      --mint: #e7f1ee;
+      --peach: #faece8;
+      --shadow: 0 18px 44px rgba(23, 32, 29, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section[id] {
+      scroll-margin-top: 86px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.68;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(220, 227, 221, 0.88);
+      background: rgba(246, 248, 245, 0.92);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar .shell {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: var(--teal);
+      border-radius: 8px;
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 32px;
+      padding: 34px 0 56px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 88px;
+      padding: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(23, 32, 29, 0.06);
+    }
+
+    .toc h2,
+    .toc h3 {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .toc h2 {
+      color: var(--muted);
+      font-weight: 680;
+    }
+
+    .toc h3 {
+      margin-top: 14px;
+      color: var(--ink);
+      font-weight: 780;
+    }
+
+    .toc nav {
+      display: grid;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .toc-list {
+      gap: 4px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 9px 10px;
+      color: var(--muted);
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .toc a:hover,
+    .toc a:focus-visible {
+      outline: none;
+      color: var(--teal-deep);
+      background: var(--mint);
+    }
+
+    .toc .active {
+      color: var(--teal-deep);
+      background: var(--mint);
+      font-weight: 720;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pose-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+      gap: 28px;
+      align-items: stretch;
+      padding: 32px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .pose-spacer {
+      margin-top: 58px;
+      padding-top: 42px;
+      border-top: 1px solid var(--line);
+    }
+
+    #tadasana {
+      order: 1;
+    }
+
+    .tadasana-facts {
+      order: 2;
+    }
+
+    .tadasana-content {
+      order: 3;
+    }
+
+    #uttanasana {
+      order: 4;
+    }
+
+    .uttanasana-facts {
+      order: 5;
+    }
+
+    .uttanasana-content {
+      order: 6;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--coral);
+      font-size: 14px;
+      font-weight: 760;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .sanskrit {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 19px;
+      font-weight: 540;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 11px;
+      color: var(--teal-deep);
+      background: var(--mint);
+      border: 1px solid #cce0da;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 680;
+    }
+
+    .pose-image {
+      min-height: 100%;
+      overflow: hidden;
+      background: var(--sky);
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .pose-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      object-position: center 58%;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .fact {
+      padding: 14px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--teal-deep);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .fact span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .panel {
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .panel.wide {
+      grid-column: 1 / -1;
+    }
+
+    .panel h2 {
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-size: 23px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .panel h3 {
+      margin: 20px 0 8px;
+      color: var(--teal-deep);
+      font-size: 17px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .panel p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .panel ul,
+    .panel ol {
+      margin: 0;
+      padding-left: 1.2em;
+      color: var(--muted);
+    }
+
+    .panel li + li {
+      margin-top: 8px;
+    }
+
+    .numbered {
+      counter-reset: step;
+      display: grid;
+      gap: 10px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .numbered li {
+      position: relative;
+      min-height: 48px;
+      padding: 11px 12px 11px 52px;
+      color: var(--muted);
+      background: #fbfcfb;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .numbered li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 12px;
+      top: 11px;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: var(--teal);
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 780;
+      line-height: 1;
+    }
+
+    .progression {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .sense-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .sense-card {
+      padding: 18px;
+      background: #fbfcfb;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .sense-card.good {
+      border-top: 4px solid var(--teal);
+    }
+
+    .sense-card.adjust {
+      border-top: 4px solid var(--coral);
+    }
+
+    .sense-card h3 {
+      margin-top: 0;
+      color: var(--ink);
+    }
+
+    .sense-card ul {
+      padding-left: 1.15em;
+    }
+
+    .stage {
+      min-height: 188px;
+      padding: 16px;
+      background: #fbfcfb;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--sage);
+      border-radius: 8px;
+    }
+
+    .stage:nth-child(2) {
+      border-top-color: var(--teal);
+    }
+
+    .stage:nth-child(3) {
+      border-top-color: var(--gold);
+    }
+
+    .stage:nth-child(4) {
+      border-top-color: var(--coral);
+    }
+
+    .stage h3 {
+      margin-top: 0;
+      color: var(--ink);
+    }
+
+    .stage p {
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    .callout {
+      padding: 18px 20px;
+      background: var(--peach);
+      border: 1px solid #efcfc5;
+      border-left: 5px solid var(--coral);
+      border-radius: 8px;
+    }
+
+    .callout strong {
+      color: var(--ink);
+    }
+
+    .checklist {
+      columns: 2;
+      column-gap: 28px;
+    }
+
+    .footer {
+      padding: 22px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+
+      .toc-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .pose-header {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-facts,
+      .progression,
+      .sense-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .topbar .shell {
+        min-height: auto;
+        padding: 12px 0;
+      }
+
+      .page {
+        padding-top: 18px;
+        gap: 18px;
+      }
+
+      .toc-list,
+      .quick-facts,
+      .content,
+      .progression,
+      .sense-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pose-header,
+      .panel {
+        padding: 20px;
+      }
+
+      .pose-image img {
+        min-height: 360px;
+      }
+
+      .checklist {
+        columns: 1;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .topbar,
+      .toc {
+        position: static;
+        box-shadow: none;
+      }
+
+      .page {
+        display: block;
+      }
+
+      .content,
+      .quick-facts,
+      .progression,
+      .sense-grid {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell">
+      <a class="brand" href="#tadasana" aria-label="回到体式收录开头">
+        <span class="brand-mark" aria-hidden="true">瑜</span>
+        <span>瑜伽体式收录</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="shell page">
+    <aside class="toc" aria-label="体式目录">
+      <h2>体式目录</h2>
+      <nav class="toc-list">
+        <a class="active" href="#tadasana">1，山式站立</a>
+        <a href="#uttanasana">2，站立前屈</a>
+      </nav>
+    </aside>
+
+    <main>
+      <!-- Future poses can be added as another pose header plus matching panels below. -->
+      <section class="pose-header pose-spacer" id="uttanasana" aria-labelledby="pose-title">
+        <div>
+          <p class="eyebrow">站立体式 · 前屈 · 腿后侧伸展</p>
+          <h1 id="pose-title">
+            2，站立前屈
+            <span class="sanskrit">Uttanasana</span>
+          </h1>
+          <p class="intro">
+            站立前屈的核心不是“手一定要碰到地”，而是从髋部折叠，让脚掌稳定、腿后侧逐步延展、脊柱和后颈自然释放。它适合作为热身、拜日式过渡、放松腿后侧和安定呼吸的练习。
+          </p>
+          <div class="chips" aria-label="体式标签">
+            <span class="chip">练习重点：屈髋</span>
+            <span class="chip">感受区域：腘绳肌</span>
+            <span class="chip">辅助工具：瑜伽砖</span>
+            <span class="chip">保持：5-8 轮呼吸</span>
+          </div>
+        </div>
+        <figure class="pose-image">
+          <img src="assets/standing-forward-bend-uttanasana.png" alt="站立前屈 Uttanasana 的体式示意图">
+        </figure>
+      </section>
+
+      <section class="quick-facts uttanasana-facts" aria-label="站立前屈体式速览">
+        <div class="fact">
+          <strong>适合时机</strong>
+          <span>腿后侧紧、久坐后、拜日式过渡</span>
+        </div>
+        <div class="fact">
+          <strong>优先目标</strong>
+          <span>骨盆前倾与脊柱释放，而非强行摸地</span>
+        </div>
+        <div class="fact">
+          <strong>初学调整</strong>
+          <span>屈膝、手扶砖、腹部贴近大腿</span>
+        </div>
+        <div class="fact">
+          <strong>退出方式</strong>
+          <span>屈膝，核心轻收，慢慢起身</span>
+        </div>
+      </section>
+
+      <div class="content uttanasana-content">
+        <section class="panel wide" id="standard">
+          <h2>标准状态</h2>
+          <ul class="checklist">
+            <li>双脚可并拢或与髋同宽；初学者建议与髋同宽，脚掌四角均匀压地。</li>
+            <li>折叠来自髋关节，坐骨向上，腹部尽量靠近大腿。</li>
+            <li>膝盖可以微屈；只有在腰背不被拉扯、呼吸稳定时，再逐步伸直双腿。</li>
+            <li>脊柱自然延展后释放，后颈放松，头顶朝向地面，不主动抬头看前方。</li>
+            <li>双手落在地面、瑜伽砖、脚踝或小腿上都可以，以保持呼吸和腰背舒适为准。</li>
+            <li>重心落在脚掌中部，脚跟不虚浮，脚趾不抓地。</li>
+          </ul>
+        </section>
+
+        <section class="panel wide" id="sensations">
+          <h2>做对与做错的常见感觉</h2>
+          <div class="sense-grid">
+            <div class="sense-card good">
+              <h3>做对时通常会感觉到</h3>
+              <ul>
+                <li>腿后侧有均匀、可呼吸的拉伸感，强度大约在 5-7 分，不是尖锐疼痛。</li>
+                <li>腹部靠近大腿后，腰背像被轻轻拉长，而不是下腰被硬拽住。</li>
+                <li>脚掌踩得稳，重心在脚掌中部，脚跟不飘，脚趾不需要用力抓地。</li>
+                <li>肩颈和头部能自然下沉，呼吸能慢下来，脸和下颌不紧绷。</li>
+                <li>保持几轮呼吸后，身体可能一点点变软，前屈深度自然增加。</li>
+              </ul>
+            </div>
+            <div class="sense-card adjust">
+              <h3>做错或过度时常见感觉</h3>
+              <ul>
+                <li>腰部酸胀、被拉扯或顶住，尤其是下腰比腿后侧更明显。</li>
+                <li>膝盖后侧有尖锐拉痛，或为了伸直腿而把膝盖锁死、向后顶。</li>
+                <li>手拼命够地，肩膀耸起，脖子用力，呼吸变短或憋气。</li>
+                <li>脚趾抓地、脚跟变轻，身体像要向前倒，重心不稳定。</li>
+                <li>出现麻、刺、电流感、放射到臀腿的感觉，或起身时头晕明显。</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" id="alignment">
+          <h2>动作要点</h2>
+          <h3>1. 先找脚，再找髋</h3>
+          <p>脚掌稳定是前屈的底座。轻轻压实大脚趾根、小脚趾根和脚跟两侧，再让髋部向后、坐骨向上。</p>
+          <h3>2. 用屈膝保护腰背</h3>
+          <p>腿后侧紧时，屈膝反而更接近正确练习：腹部能贴近大腿，腰椎不需要硬撑成弓形。</p>
+          <h3>3. 呼气时深入，吸气时拉长</h3>
+          <p>每次吸气感觉脊柱有空间，每次呼气让肩颈、后背和腿后侧慢慢放松。</p>
+        </section>
+
+        <section class="panel" id="practice">
+          <h2>进入与退出</h2>
+          <ol class="numbered">
+            <li>从山式站立开始，双脚踩稳，膝盖朝向脚尖，吸气让胸腔和脊柱向上延展。</li>
+            <li>呼气，微屈膝，从髋部向前折叠，让腹部先靠近大腿，而不是先追求手碰地。</li>
+            <li>双手放到瑜伽砖、地面、脚踝或小腿；吸气进入半前屈，背部拉长。</li>
+            <li>再次呼气，回到前屈，放松头颈，保持 5-8 轮平稳呼吸。</li>
+            <li>退出时屈膝，核心轻轻向内收，手扶髋或保持脊柱延展，慢慢回到站立。</li>
+          </ol>
+        </section>
+
+        <section class="panel wide" id="progress">
+          <h2>如何逐步达到标准状态</h2>
+          <div class="progression">
+            <div class="stage">
+              <h3>阶段一：先稳定</h3>
+              <p>脚与髋同宽，膝盖明显弯曲，手放高砖。目标是腹部贴大腿、腰背无拉扯、呼吸不断。</p>
+            </div>
+            <div class="stage">
+              <h3>阶段二：练屈髋</h3>
+              <p>在半前屈和前屈之间来回 5-8 次，感受髋部折叠，背部先变长，再慢慢释放。</p>
+            </div>
+            <div class="stage">
+              <h3>阶段三：降低支撑</h3>
+              <p>把瑜伽砖从高位调到中位或低位。若腰背仍舒适，再一点点伸直膝盖。</p>
+            </div>
+            <div class="stage">
+              <h3>阶段四：深入保持</h3>
+              <p>手可落地或扶脚踝，重心微微向前到脚掌中部，坐骨上提，头颈完全放松。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" id="mistakes">
+          <h2>常见问题</h2>
+          <h3>摸不到地怎么办？</h3>
+          <p>用瑜伽砖或椅子垫高双手。前屈的进步标准是髋部折叠更清晰、呼吸更顺，不是手的位置更低。</p>
+          <h3>腰酸或腰被拽住？</h3>
+          <p>立刻屈膝，让腹部贴近大腿，减少背部被动拉扯。若出现刺痛、麻木或放射感，停止练习。</p>
+          <h3>膝盖需要完全伸直吗？</h3>
+          <p>不需要强求。腿后侧逐渐打开后，膝盖会自然更接近伸直；锁死膝盖反而容易让腰和膝承压。</p>
+        </section>
+
+        <section class="panel" id="routine">
+          <h2>5-10 分钟练习流程</h2>
+          <ol>
+            <li>热身 2 分钟：猫牛式、下犬式或站立半前屈，唤醒脊柱和腿后侧。</li>
+            <li>动态进入 1-2 分钟：半前屈和前屈交替 5-8 次。</li>
+            <li>主练 3 轮：每轮保持 5-8 次呼吸，中间回到半前屈。</li>
+            <li>放松 1 分钟：屈膝悬垂，观察后背、腿后侧和呼吸的变化。</li>
+          </ol>
+        </section>
+
+        <section class="panel wide" id="safety">
+          <h2>安全提醒</h2>
+          <div class="callout">
+            <p><strong>练习中以“可呼吸、无疼痛、可退出”为准。</strong> 如果有急性腰背伤、椎间盘问题、坐骨神经痛、腿后侧拉伤、眩晕、青光眼、眼压问题、血压控制不稳定，或正在孕期，请先咨询专业老师或医生，并使用椅子、墙面或瑜伽砖降低强度。</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="pose-header" id="tadasana" aria-labelledby="tadasana-title">
+        <div>
+          <p class="eyebrow">站立体式 · 根基 · 中立站姿</p>
+          <h1 id="tadasana-title">
+            1，山式站立
+            <span class="sanskrit">Tadasana</span>
+          </h1>
+          <p class="intro">
+            山式看起来像“只是站着”，其实是在练习脚掌根基、骨盆中立、脊柱向上延展和呼吸稳定。它是许多站立体式的起点，也适合用来校准日常站姿。
+          </p>
+          <div class="chips" aria-label="体式标签">
+            <span class="chip">练习重点：根基</span>
+            <span class="chip">感受区域：足弓与中轴</span>
+            <span class="chip">辅助工具：墙面</span>
+            <span class="chip">保持：5-10 轮呼吸</span>
+          </div>
+        </div>
+        <figure class="pose-image">
+          <img src="assets/mountain-pose-tadasana.png" alt="山式站立 Tadasana 的体式示意图">
+        </figure>
+      </section>
+
+      <section class="quick-facts tadasana-facts" aria-label="山式站立体式速览">
+        <div class="fact">
+          <strong>适合时机</strong>
+          <span>站姿开始、体态校准、练习间过渡</span>
+        </div>
+        <div class="fact">
+          <strong>优先目标</strong>
+          <span>脚掌稳定，身体中轴向上延展</span>
+        </div>
+        <div class="fact">
+          <strong>初学调整</strong>
+          <span>双脚与髋同宽，或背靠墙找线</span>
+        </div>
+        <div class="fact">
+          <strong>退出方式</strong>
+          <span>保持稳定呼吸，放松或进入下一体式</span>
+        </div>
+      </section>
+
+      <div class="content tadasana-content">
+        <section class="panel wide" id="tadasana-standard">
+          <h2>标准状态</h2>
+          <ul class="checklist">
+            <li>双脚可并拢或与髋同宽；初学者建议与髋同宽，脚趾自然朝前。</li>
+            <li>脚掌四角均匀压地，足弓轻轻上提，脚趾舒展但不抓地。</li>
+            <li>膝盖朝向第二脚趾，双腿有向上的力量，但膝盖不向后锁死。</li>
+            <li>骨盆保持中立，尾骨自然向下，前侧肋骨不过度外翻。</li>
+            <li>脊柱向上延展，胸腔打开，肩膀放松下沉，不夹肩、不耸肩。</li>
+            <li>下巴微收，后颈变长，头顶向上，目光平视前方。</li>
+          </ul>
+        </section>
+
+        <section class="panel wide" id="tadasana-sensations">
+          <h2>做对与做错的常见感觉</h2>
+          <div class="sense-grid">
+            <div class="sense-card good">
+              <h3>做对时通常会感觉到</h3>
+              <ul>
+                <li>脚掌稳稳贴地，重量平均分布，不会明显偏向脚跟或脚趾。</li>
+                <li>腿部有轻微向上收束的力量，但膝盖和大腿前侧不僵硬。</li>
+                <li>下背部有空间，骨盆像被稳定托住，而不是刻意夹臀或塌腰。</li>
+                <li>胸腔自然开阔，肩颈轻松，手臂能自然垂在身体两侧。</li>
+                <li>呼吸顺畅，站着时有“向下扎根、向上长高”的稳定感。</li>
+              </ul>
+            </div>
+            <div class="sense-card adjust">
+              <h3>做错或过度时常见感觉</h3>
+              <ul>
+                <li>脚趾抓地、足弓塌陷，或重心明显压在脚跟、脚外侧。</li>
+                <li>膝盖向后顶住，腿前侧紧绷，站久后膝盖后侧不舒服。</li>
+                <li>腰眼被挤压、肋骨向前翘，像在用塌腰换取“挺胸”。</li>
+                <li>肩膀耸起或向后硬夹，脖子紧，下巴抬高，呼吸变浅。</li>
+                <li>身体左右摇晃明显，或闭眼后立刻失去平衡。</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" id="tadasana-alignment">
+          <h2>动作要点</h2>
+          <h3>1. 脚掌先扎根</h3>
+          <p>感受大脚趾根、小脚趾根和脚跟两侧均匀压地，让足弓有轻轻提起的弹性。</p>
+          <h3>2. 腿有力量，但关节不锁死</h3>
+          <p>膝盖朝向脚尖，大腿轻轻向上收；保持膝盖微微有弹性，避免向后顶。</p>
+          <h3>3. 骨盆和肋骨回到中立</h3>
+          <p>尾骨自然向下，前侧肋骨轻轻收回，胸腔不是硬挺，而是在稳定中打开。</p>
+        </section>
+
+        <section class="panel" id="tadasana-practice">
+          <h2>进入与保持</h2>
+          <ol class="numbered">
+            <li>双脚站稳，可并拢或与髋同宽，先让脚趾抬起再轻轻放回地面。</li>
+            <li>把身体重量在脚掌前后左右微调，找到脚掌中部最稳定的位置。</li>
+            <li>膝盖保持柔软，大腿轻轻上提，骨盆回到中立，尾骨自然向下。</li>
+            <li>吸气让脊柱变长，呼气放松肩膀和下颌，手臂自然垂放。</li>
+            <li>保持 5-10 轮呼吸，观察脚掌、骨盆、胸腔和头顶是否在同一条中轴上。</li>
+          </ol>
+        </section>
+
+        <section class="panel wide" id="tadasana-progress">
+          <h2>如何逐步达到标准状态</h2>
+          <div class="progression">
+            <div class="stage">
+              <h3>阶段一：靠墙找线</h3>
+              <p>背靠墙站立，感受后脑、上背、骨盆附近的相对位置；不需要把每一处都硬贴墙。</p>
+            </div>
+            <div class="stage">
+              <h3>阶段二：练脚掌觉察</h3>
+              <p>轻轻前后左右移动重心，再回到脚掌中部。目标是脚趾放松、足弓有弹性。</p>
+            </div>
+            <div class="stage">
+              <h3>阶段三：建立中轴</h3>
+              <p>吸气头顶向上，呼气脚掌向下扎根。让身体不是僵直，而是上下都有方向。</p>
+            </div>
+            <div class="stage">
+              <h3>阶段四：融入练习</h3>
+              <p>在前屈、战士式、树式前后回到山式，用它检查左右重量和呼吸是否恢复稳定。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" id="tadasana-mistakes">
+          <h2>常见问题</h2>
+          <h3>双脚一定要并拢吗？</h3>
+          <p>不一定。若并拢会让你不稳、膝盖内扣或骨盆紧张，先双脚与髋同宽更合适。</p>
+          <h3>为什么站着反而腰酸？</h3>
+          <p>多半是肋骨外翻、骨盆前倾或膝盖锁死。先微屈膝，尾骨自然向下，前侧肋骨轻轻收回。</p>
+          <h3>山式需要用力收腹吗？</h3>
+          <p>不需要憋住肚子。可以轻轻感受下腹向内上方有支撑，但呼吸仍然能流动。</p>
+        </section>
+
+        <section class="panel" id="tadasana-routine">
+          <h2>3-5 分钟练习流程</h2>
+          <ol>
+            <li>脚掌觉察 1 分钟：脚趾抬起放下，找到脚掌四角压地。</li>
+            <li>重心校准 1 分钟：身体前后左右小幅移动，再回到中心。</li>
+            <li>中轴呼吸 1-2 分钟：吸气向上延展，呼气向下扎根。</li>
+            <li>整合 1 分钟：放松肩颈和下颌，保持目光平稳，观察站姿是否省力。</li>
+          </ol>
+        </section>
+
+        <section class="panel wide" id="tadasana-safety">
+          <h2>安全提醒</h2>
+          <div class="callout">
+            <p><strong>山式的稳定感来自清醒的放松，不是把身体站僵。</strong> 如果练习时头晕、膝盖不适、腰部压迫或平衡困难，请把双脚打开到与髋同宽，保持眼睛睁开，必要时靠墙练习。若有持续疼痛或眩晕，请停止并咨询专业人士。</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <footer class="shell footer">
+    <p>当前已收录 2 个体式：1，山式站立；2，站立前屈。以后可以继续把其他体式追加到同一个页面中；每个体式可按“图片、标准状态、自查感受、动作要点、进入退出、循序练习、安全提醒”的结构收录。</p>
+  </footer>
+</body>
+</html>
