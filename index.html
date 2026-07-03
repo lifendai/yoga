@@ -271,7 +271,12 @@
     }
 
     .pose-image {
-      min-height: 100%;
+      margin: 0;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 2 / 3;
+      align-self: center;
+      justify-self: end;
       overflow: hidden;
       background: var(--sky);
       border-radius: 8px;
@@ -281,8 +286,8 @@
     .pose-image img {
       width: 100%;
       height: 100%;
-      min-height: 430px;
-      object-fit: contain;
+      min-height: 0;
+      object-fit: cover;
       object-position: center;
     }
 
@@ -542,8 +547,10 @@
         padding: 20px;
       }
 
-      .pose-image img {
-        min-height: 360px;
+      .pose-image {
+        justify-self: center;
+        max-width: 420px;
+        margin: 0 auto;
       }
 
       .checklist {
